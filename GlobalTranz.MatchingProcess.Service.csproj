@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BE923967-F1E0-45EC-94A0-27B0A3BE5682}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GlobalTranz.MatchingProcess.Service</RootNamespace>
+    <AssemblyName>GlobalTranz.MatchingProcess.Service</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <MSBuildExtensionPackPath>C:\Program Files (x86)\MSBuild\ExtensionPack\4.0\MSBuild.ExtensionPack.tasks</MSBuildExtensionPackPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+    <DocumentationFile>bin\Debug\GlobalTranz.MatchingProcess.Service.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Hermes.Diagnostics">
+      <HintPath>..\..\..\Reference\Assembly\Hermes.Diagnostics.dll</HintPath>
+    </Reference>
+    <Reference Include="Amadeus.Simplex.Base">
+      <HintPath>..\..\..\Reference\Assembly\Amadeus.Simplex.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\Reference\Assembly\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Workflow.Activities" />
+    <Reference Include="System.Workflow.ComponentModel" />
+    <Reference Include="System.Workflow.Runtime" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="IMatchingProcess.cs" />
+    <Compile Include="MatchingProcess.Activator.cs" />
+    <Compile Include="MatchingProcess.Constants.cs" />
+    <Compile Include="MatchingProcess.Contract.cs" />
+    <Compile Include="MatchingProcess.Service.cs" />
+    <Compile Include="MatchingProcessInstaller.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MatchingProcessInstaller.Designer.cs">
+      <DependentUpon>MatchingProcessInstaller.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MatchingProcessService.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MatchingProcessService.Designer.cs">
+      <DependentUpon>MatchingProcessService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\Reference\Rule\GlobalTranz.licenseheader">
+      <Link>GlobalTranz.licenseheader</Link>
+    </None>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="MatchingProcessInstaller.resx">
+      <DependentUpon>MatchingProcessInstaller.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Framework.Common\Framework.Common.csproj">
+      <Project>{A5E1DD95-317E-479D-9250-F5275B4B22D8}</Project>
+      <Name>Framework.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Framework.DataAccess\Framework.DataAccess.csproj">
+      <Project>{01E1CE64-B877-4C71-A2F1-C6CB6FC3545C}</Project>
+      <Name>Framework.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GlobalTranz.Common.BusinessLogic\GlobalTranz.Common.BusinessLogic.csproj">
+      <Project>{CF590860-8837-4161-A56D-CECA03B09B3A}</Project>
+      <Name>GlobalTranz.Common.BusinessLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GlobalTranz.Enterprise.EDI\GlobalTranz.EDI.Activities\GlobalTranz.EDI.Activities.csproj">
+      <Project>{11921630-8590-449B-9EF5-483447324D80}</Project>
+      <Name>GlobalTranz.EDI.Activities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GlobalTranz.Enterprise.EDI\GlobalTranz.EDI.BusinessLogic\GlobalTranz.EDI.BusinessLogic.csproj">
+      <Project>{CBB71CB3-3A51-48AF-AF8C-F2FC6B06601F}</Project>
+      <Name>GlobalTranz.EDI.BusinessLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GlobalTranz.Enterprise.EDI\GlobalTranz.EDI.Contracts\GlobalTranz.EDI.Contracts.csproj">
+      <Project>{16B75F05-801C-442E-80D9-295E644EFEAE}</Project>
+      <Name>GlobalTranz.EDI.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GlobalTranz.Enterprise.EDI\GlobalTranz.EDI.Workflows\GlobalTranz.EDI.Workflows.csproj">
+      <Project>{F10B81BF-A22D-42DA-9974-4AA7C05D4FDA}</Project>
+      <Name>GlobalTranz.EDI.Workflows</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GlobalTranz.Logger\GlobalTranz.Logger.csproj">
+      <Project>{7C7493F7-52BC-408F-B9ED-78AFBD5F06D6}</Project>
+      <Name>GlobalTranz.Logger</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Common\Styles\AgentMailNotification.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Common\Styles\CustomerRebillMailSetup.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Common\Styles\EDIErrorNotificationMail.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Common\Styles\EDISucessNotificationMail.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Common\Styles\NotificationForFailureEDI210ConsolidateList.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Common\Styles\NotificationForFailureEDI210Details.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Common\Styles\NotificationMailDefault.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Common\Styles\RateDepartmentMailNotification.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionPackPath)" Condition="Exists('$(MSBuildExtensionPackPath)')" />
+  <Target Name="Package">
+    <ItemGroup>
+      <FilesToZip Include="$(MSBuildProjectDirectory)\bin\Release\*.dll" />
+      <FilesToZip Include="$(MSBuildProjectDirectory)\bin\Release\*.exe" />
+      <FilesToZip Include="$(MSBuildProjectDirectory)\bin\Release\**\*.xslt" />
+    </ItemGroup>
+    <MSBuild.ExtensionPack.Compression.Zip TaskAction="Create" CompressFiles="@(FilesToZip)" ZipFileName="$(CCNetArtifactDirectory)\$(CCNetLabel)\MatchingProcessService_$(CCNetLabel).zip" RemoveRoot="$(MSBuildProjectDirectory)\bin\Release" />
+  </Target>
+  <Target Name="Deploy">
+    <MSBuild.ExtensionPack.Compression.Zip TaskAction="Extract" ZipFileName="$(CCNetArtifactDirectory)\$(CCNetLabel)\MatchingProcessService_$(CCNetLabel).zip" ExtractPath="$(CCNetArtifactDirectory)\MatchingProcessService_$(CCNetLabel)" />
+    <MSBuild.ExtensionPack.FileSystem.RoboCopy Source="$(CCNetArtifactDirectory)\MatchingProcessService_$(CCNetLabel)" Destination="$(DeployPath)" Files="*.*" Options="/S" />
+    <RemoveDir Directories="$(CCNetArtifactDirectory)\MatchingProcessService_$(CCNetLabel)" />
+  </Target>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
